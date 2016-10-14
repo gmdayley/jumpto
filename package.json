@@ -1,0 +1,47 @@
+{
+  "name": "jumpTo",
+  "displayName": "JumpTo",
+  "description": "Automatically generates and jumps to alternate files",
+  "version": "0.0.1",
+  "publisher": "gmdayley",
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "categories": [
+    "Other",
+    "Test"
+  ],
+  "activationEvents": [
+    "onCommand:extension.jumpToAlternate"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.jumpToAlternate",
+        "title": "Alternate File"
+      }
+    ],
+    "keybindings": [{
+        "command": "extension.jumpToAlternate",
+        "key": "ctrl+shift+j",
+        "mac": "cmd+shift+j",
+        "when": "editorTextFocus"
+    }]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0",
+    "mocha": "^2.3.3",
+    "eslint": "^3.6.0",
+    "@types/node": "^6.0.40",
+    "@types/mocha": "^2.2.32"
+  },
+  "dependencies": {
+    "lodash": "^4.16.4",
+    "mkdirp": "^0.5.1"
+  }
+}
